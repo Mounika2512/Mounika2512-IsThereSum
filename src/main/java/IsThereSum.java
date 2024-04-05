@@ -1,4 +1,3 @@
-
 public class IsThereSum {
     /**
      * Check if there exist two numbers in an array add up to some other number.
@@ -10,6 +9,20 @@ public class IsThereSum {
      * @return true if two separate values in the array add up to a target, false otherwise.
      */
     public boolean check(int[] arr, int target){
-        return false;
+            for (int i = 0; i < arr.length - 1; i++) {
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[i] + arr[j] == target) {
+                        return true; 
+                    }
+                }
+            }
+            return false; 
+        }
+    
+        public static void main(String[] args) {
+            IsThereSum is = new IsThereSum();
+            int[] arr = {1, 2, 3, 4};
+            int target = 3;
+            System.out.println("Add up the two numbers " + target + " in the array: " + is.check(arr, target));
+        }
     }
-}
